@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIZ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    h2 {
+      color: #333;
+    }
+    #quiz-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>QUIZ</h2>
+  <div id="quiz-container">
+    <div class="question" id="question1">
+      <div class="fw-bolder">1. 기후 변화는 우리의 삶에 '직접적인' 영향을 미친다?</div>
+      <label>
+        <input type="radio" name="q1" value="A"> A) O
+      </label>
+      <label>
+        <input type="radio" name="q1" value="B"> B) X
+      </label>
+    </div><br>
+
+    <div class="question" id="question2">
+      <div class="fw-bolder">2. 현재 누가 co2를 가장 많이 방출하고 있는가?</div>
+      <label>
+        <input type="radio" name="q2" value="A"> A) EUROPE
+      </label>
+      <label>
+        <input type="radio" name="q2" value="B"> B) ASIA
+      </label>
+      <label>
+        <input type="radio" name="q2" value="C"> C) NORTH AMERICA
+      </label>
+    </div><br>
+      <div class="question" id="question3">
+      <div class="fw-bolder">3. 공주 일기 영상에서 일기 주인은 왜 섬을 떠났을 지 가장 근접한 답을 고르시오.</div>
+      <label>
+        <input type="radio" name="q3" value="A"> A) 먹을게 없어서
+      </label>
+      <label>
+        <input type="radio" name="q3" value="B"> B) 해수면 상승으로
+      </label>
+      <label>
+        <input type="radio" name="q3" value="C"> C) 지진이 일어나서
+      </label>
+    </div>
+
+    <!-- 여러 개의 질문을 추가할 수 있습니다. -->
+
+    <button onclick="gradeQuiz()">제출하기</button>
+  </div>
+
+  <script>
+    function gradeQuiz() {
+      // 각 질문에 대한 정답을 여기에 입력하세요.
+      var answers = {
+        q1: 'A', // 첫 번째 질문의 정답
+        q2: 'B',  // 두 번째 질문의 정답
+        q3: 'B'  // 세 번째 질문의 정답
+        // 추가적인 질문의 정답을 입력하세요.
+      };
+
+      // 사용자가 선택한 답을 확인하고 점수를 계산합니다.
+      var score = 0;
+      for (var questionId in answers) {
+        var userAnswer = document.querySelector('input[name="' + questionId + '"]:checked');
+        if (userAnswer) {
+          userAnswer = userAnswer.value;
+          if (userAnswer === answers[questionId]) {
+            score++;
+          }
+        }
+      }
+
+      // 결과를 출력합니다.
+      alert('점수: ' + score + ' / ' + Object.keys(answers).length);
+    }
+  </script>
+
+</body>
+</html>
