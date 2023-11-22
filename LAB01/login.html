@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+</head>
+<body>
+<h3>회원 로그인</h3>
+<hr>
+<form name="resume" method="post">
+    <div id="txt_input">
+        <p>
+            <label>이메일 <input type="text" id="email" name="email" placeholder="id@domain_name"></label>
+        </p>
+        <p>
+            <label>암 호 <input type="password" id="pwd"></label>
+        </p>
+    </div>
+</form>
+<form name="srch" action="{%url'search'%}">
+    <p>
+        <input type="button" value="로그인">
+    </p>
+</form>
+</body>
+</html>
